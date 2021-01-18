@@ -20,7 +20,29 @@ export interface ICreateProjectError {
 	readonly type: typeof CREATE_PROJECT_ERROR;
 }
 
+export const GET_PROJECTS_REQUEST = 'projects/get_projects_request';
+
+export interface IGetProjectsRequestAction {
+	readonly type: typeof GET_PROJECTS_REQUEST;
+}
+
+export const GET_PROJECTS_SUCCESS = 'projects/get_projects_success';
+
+export interface IGetProjectsSuccessAction {
+	readonly type: typeof GET_PROJECTS_SUCCESS;
+	projects: IProject[];
+}
+
+export const GET_PROJECTS_ERROR = 'projects/get_projects_error';
+
+export interface IGetProjectsError {
+	readonly type: typeof GET_PROJECTS_ERROR;
+}
+
 export type ProjectAction =
 	| ICreateProjectSuccessAction
 	| ICreateProjectRequestAction
-	| ICreateProjectError;
+	| ICreateProjectError
+	| IGetProjectsRequestAction
+	| IGetProjectsSuccessAction
+	| IGetProjectsError;

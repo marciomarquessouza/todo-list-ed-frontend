@@ -18,3 +18,18 @@ export const createProjectSuccess = (
 export const createProjectError = (): actions.ICreateProjectError => ({
 	type: actions.CREATE_PROJECT_ERROR,
 });
+
+export const getProjectsRequest = (): actions.IGetProjectsRequestAction => ({
+	type: actions.GET_PROJECTS_REQUEST,
+});
+
+export const getProjectsSuccess = (
+	projects: IProject[],
+): actions.IGetProjectsSuccessAction => ({
+	type: actions.GET_PROJECTS_SUCCESS,
+	projects,
+});
+
+export const getProjectsError = (): actions.IGetProjectsError => ({
+	type: actions.GET_PROJECTS_ERROR,
+});

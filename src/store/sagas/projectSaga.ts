@@ -20,6 +20,20 @@ function* watchOnCreateProject() {
 	yield takeLatest(projectActionsTypes.CREATE_PROJECT_REQUEST, onCreateProject);
 }
 
+function* onGetProjects() {
+	try {
+		const projects = yield call(services.getProjects);
+		yield put(projectActions.getProjectsSuccess(projects));
+	} catch (error) {
+		yield put(projectActions.getProjectsError());
+		yield put(alertActions.alertShow(error.message, 'error'));
+	}
+}
+
+function* watchOnGetProjects() {
+	yield takeLatest(projectActionsTypes.GET_PROJECTS_REQUEST, onGetProjects);
+}
+
 export default function* signInSaga() {
-	yield all([fork(watchOnCreateProject)]);
+	yield all([fork(watchOnCreateProject), fork(watchOnGetProjects)]);
 }

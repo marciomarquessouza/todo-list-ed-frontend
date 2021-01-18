@@ -10,4 +10,5 @@ export interface ITask {
 	status: TaskStatus;
 	createdAt: Date;
 	finishedAt: Date;
+	projectId: number;
 }

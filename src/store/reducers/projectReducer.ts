@@ -2,12 +2,12 @@ import { IProject } from '../../types/projects';
 import * as actions from '../actions/actionsTypes/projectsActionsTypes';
 
 interface IProjectState {
-	isLoading: boolean;
+	status: 'idle' | 'creating' | 'loading';
 	projects: IProject[];
 }
 
 const initialState: IProjectState = {
-	isLoading: false,
+	status: 'idle',
 	projects: [],
 };
 
@@ -19,18 +19,30 @@ export const projectReducer = (
 		case actions.CREATE_PROJECT_REQUEST:
 			return {
 				...state,
-				isLoading: true,
+				status: 'creating',
+			};
+		case actions.GET_PROJECTS_REQUEST:
+			return {
+				...state,
+				status: 'loading',
 			};
 		case actions.CREATE_PROJECT_SUCCESS:
 			return {
 				...state,
-				isLoading: false,
+				status: 'idle',
 				projects: [...state.projects, action.project],
 			};
-		case actions.CREATE_PROJECT_ERROR:
+		case actions.GET_PROJECTS_SUCCESS:
 			return {
 				...state,
-				isLoading: false,
+				projects: action.projects,
+				status: 'idle',
+			};
+		case actions.CREATE_PROJECT_ERROR:
+		case actions.GET_PROJECTS_ERROR:
+			return {
+				...state,
+				status: 'idle',
 			};
 		default:
 			return {

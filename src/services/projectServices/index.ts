@@ -19,9 +19,27 @@ export const createProject = async (title: string): Promise<IProject> => {
 			},
 		});
 
-		console.log('project', project);
-
 		return project;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+};
+
+export const getProjects = async (): Promise<IProject[]> => {
+	try {
+		const token = getToken();
+		if (!token) {
+			throw new Error('No token available');
+		}
+
+		const projects = await request.get<IProject[]>({
+			url: '/projects',
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+
+		return projects;
 	} catch (error) {
 		throw new Error(error.message);
 	}
