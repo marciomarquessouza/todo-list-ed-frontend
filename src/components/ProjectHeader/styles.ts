@@ -16,9 +16,13 @@ export const ProfileContainer = styled.div`
 `;
 
 export const NameStyle = styled.span`
-	padding: 0.3em 2.5em;
+	padding: 10px;
 	font-family: ${(props) => props.theme.fonts.title};
 	font-weight: 400;
 	font-size: 1.2em;
 	color: ${(props) => props.theme.colors.black};
+	word-wrap: break-word;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	max-width: 180px;
 `;

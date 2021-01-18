@@ -20,6 +20,9 @@
 
 		"fillInAllFields": "Por favor, preencha todos os campos",
 
-		"logout": "Sair"
+		"logout": "Sair",
+
+		"createProjectTitle": "Criar novo project",
+		"createProjectBtnLabel": "Criar Projeto"
 	}
 }

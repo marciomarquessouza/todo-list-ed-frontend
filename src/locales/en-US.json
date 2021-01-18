@@ -20,6 +20,10 @@
 
 		"fillInAllFields": "Please fill in all fields",
 
-		"logout": "Sign Out"
+		"logout": "Sign Out",
+
+		"createProjectTitle": "Create a new project",
+		"createProjectPlaceholder": "Project Name",
+		"createProjectBtnLabel": "Create Project"
 	}
 }

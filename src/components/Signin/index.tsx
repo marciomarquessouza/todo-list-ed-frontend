@@ -33,7 +33,7 @@ export const SignIn = () => {
 		setState({ ...state, [name]: value });
 	};
 
-	const onSubmit = async (event: React.ChangeEvent<HTMLFormElement>) => {
+	const onSubmit = (event: React.ChangeEvent<HTMLFormElement>) => {
 		event.preventDefault();
 		const { email, password } = state;
 		if (!email || !password) {
