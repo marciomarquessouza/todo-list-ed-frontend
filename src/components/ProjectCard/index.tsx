@@ -21,6 +21,7 @@ export const ProjectCard = ({
 	onCreateTask,
 	onCompleteTask,
 	onRemoveTask,
+	onRemoveProject,
 }: IProjectCard) => {
 	const classes = useStyles();
 
@@ -47,10 +48,13 @@ export const ProjectCard = ({
 				}
 				action={
 					<CardActions disableSpacing>
-						<IconButton aria-label="add to favorites">
+						<IconButton aria-label="add to favorites" disabled>
 							<EditIcon />
 						</IconButton>
-						<IconButton aria-label="share">
+						<IconButton
+							aria-label="share"
+							disabled={!!tasks.length}
+							onClick={() => onRemoveProject(project.id)}>
 							<DeleteIcon />
 						</IconButton>
 					</CardActions>

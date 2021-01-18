@@ -44,3 +44,41 @@ export const getProjects = async (): Promise<IProject[]> => {
 		throw new Error(error.message);
 	}
 };
+
+export const setProject = async (id: number): Promise<IProject> => {
+	try {
+		const token = getToken();
+		if (!token) {
+			throw new Error('No token available');
+		}
+
+		const project = await request.put<IProject>({
+			url: `/projects/${id}`,
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+
+		return project;
+	} catch (error) {
+		throw new Error(error.message);
+	}
+};
+
+export const removeProject = async (id: number): Promise<void> => {
+	try {
+		const token = getToken();
+		if (!token) {
+			throw new Error('No token available');
+		}
+
+		await request.remove({
+			url: `/projects/${id}`,
+			headers: {
+				Authorization: `Bearer ${token}`,
+			},
+		});
+	} catch (error) {
+		throw new Error(error.message);
+	}
+};

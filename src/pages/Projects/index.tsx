@@ -43,6 +43,10 @@ export const Projects = () => {
 		dispatch(taskActions.removeTaskRequest(id));
 	};
 
+	const handleRemoveProject = (id: number) => {
+		dispatch(projectActions.removeProjectRequest(id));
+	};
+
 	return (
 		<>
 			<ProjectHeader
@@ -67,6 +71,7 @@ export const Projects = () => {
 							onCreateTask={handleSubmitNewTask}
 							onCompleteTask={handleCompleteTask}
 							onRemoveTask={handleRemoveTask}
+							onRemoveProject={handleRemoveProject}
 						/>
 					);
 				})}

@@ -34,6 +34,29 @@ function* watchOnGetProjects() {
 	yield takeLatest(projectActionsTypes.GET_PROJECTS_REQUEST, onGetProjects);
 }
 
+function* onRemoveProjects({
+	id,
+}: projectActionsTypes.IRemoveProjectRequestAction) {
+	try {
+		yield call(services.removeProject, id);
+		yield put(projectActions.removeProjectSuccess(id));
+	} catch (error) {
+		yield put(projectActions.removeProjectError());
+		yield put(alertActions.alertShow(error.message, 'error'));
+	}
+}
+
+function* watchOnRemoveProjects() {
+	yield takeLatest(
+		projectActionsTypes.REMOVE_PROJECT_REQUEST,
+		onRemoveProjects,
+	);
+}
+
 export default function* signInSaga() {
-	yield all([fork(watchOnCreateProject), fork(watchOnGetProjects)]);
+	yield all([
+		fork(watchOnCreateProject),
+		fork(watchOnGetProjects),
+		fork(watchOnRemoveProjects),
+	]);
 }
