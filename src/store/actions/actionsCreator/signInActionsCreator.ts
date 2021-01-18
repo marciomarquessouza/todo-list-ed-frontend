@@ -1,4 +1,5 @@
 import * as actions from '../actionsTypes/signInActionsTypes';
+import { IUser } from '../../../types/user';
 
 export const signInRequest = (
 	email: string,
@@ -15,4 +16,17 @@ export const signInSuccess = (): actions.ISignInSuccessAction => ({
 
 export const signInError = (): actions.ISignInErrorAction => ({
 	type: actions.SIGN_IN_ERROR,
+});
+
+export const profileRequest = (): actions.IProfileRequesAction => ({
+	type: actions.PROFILE_REQUEST,
+});
+
+export const profileSuccess = (user: IUser): actions.IProfileSuccessAction => ({
+	type: actions.PROFILE_SUCCESS,
+	user,
+});
+
+export const profileError = (): actions.IProfileErrorAction => ({
+	type: actions.PROFILE_ERROR,
 });

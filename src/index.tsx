@@ -8,7 +8,7 @@ import reportWebVitals from './reportWebVitals';
 
 WebFont.load({
 	google: {
-		families: ['Oswald:400', 'Roboto:400', 'Fredoka One:400'],
+		families: ['Oswald:400', 'Roboto:300,400,500,700', 'Fredoka One:400'],
 	},
 });
 
