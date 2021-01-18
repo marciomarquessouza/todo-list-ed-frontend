@@ -3,16 +3,12 @@ import * as actions from '../actions/actionsTypes/projectsActionsTypes';
 
 interface IProjectState {
 	isLoading: boolean;
-	project: IProject;
+	projects: IProject[];
 }
 
 const initialState: IProjectState = {
 	isLoading: false,
-	project: {
-		id: 0,
-		title: '',
-		tasks: [],
-	},
+	projects: [],
 };
 
 export const projectReducer = (
@@ -29,7 +25,7 @@ export const projectReducer = (
 			return {
 				...state,
 				isLoading: false,
-				project: action.project,
+				projects: [...state.projects, action.project],
 			};
 		case actions.CREATE_PROJECT_ERROR:
 			return {
