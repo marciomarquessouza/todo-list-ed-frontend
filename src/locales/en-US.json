@@ -1,0 +1,25 @@
+{
+	"translation": {
+		"login": "Sign In",
+		"startNow": "Start Now!",
+		"email": "Email",
+		"password": "Password",
+		"name": "Name",
+		"welcome": "Welcome to TODO List",
+		"signUpLink": "Don’t have an account? Sign Up now!",
+		"error": "error",
+		"warning": "warning",
+		"success": "success",
+
+		"defaultError": "something wrong happened",
+
+		"createAccount": "Create account",
+		"signUp": "Sign Up",
+		"signUpSuccess": "Account created with success!",
+		"signUpError": "Error to create a new account",
+
+		"fillInAllFields": "Please fill in all fields",
+
+		"logout": "Sign Out"
+	}
+}

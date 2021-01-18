@@ -1,0 +1,25 @@
+{
+	"translation": {
+		"login": "Login",
+		"startNow": "Iniciar Agora!",
+		"email": "E-mail",
+		"password": "Password",
+		"name": "Nome",
+		"welcome": "Bem vindo ao TODO List",
+		"signUpLink": "Ainda não possui um conta? Registre-se agora!",
+		"error": "erro",
+		"warning": "warning",
+		"success": "success",
+
+		"defaultError": "Desculpe-nos, mas um erro inesperado acabou de ocorrer.",
+
+		"createAccount": "Criar nova Conta",
+		"signUp": "Registrar-se",
+		"signUpSuccess": "Conta criada com sucesso!",
+		"signUpError": "Error para criar uma nova conta",
+
+		"fillInAllFields": "Por favor, preencha todos os campos",
+
+		"logout": "Sair"
+	}
+}
